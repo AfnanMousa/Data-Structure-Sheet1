@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 public class MySpecialArrayUtils {
 	public static void reverse(int[]arr) 
 	{
@@ -40,21 +41,24 @@ public class MySpecialArrayUtils {
 	    } 
 		 return array;
 	 }
-	 public static double average(int[] arr)
+	 public static BigDecimal average(int[] arr)
 	 {
 		 int n=(arr.length);
 		 if (n==0)
 		 {
-			 return 0;
+			 return BigDecimal.valueOf(0) ;
 		 }
 		 else
 		 {
-			long sum=0;
+			 BigDecimal sum =BigDecimal.valueOf(0) ;
 			 for(int t=0;t<n;t++)
 			 {
-				 sum+=(arr[t]);
+				 BigDecimal a1 =BigDecimal.valueOf(arr[t]) ;
+				 sum=sum.add(a1);
 			 }
-			 return sum/n;
+			 BigDecimal a2 =BigDecimal.valueOf(n) ;
+			 sum=sum.divide(a2);
+			 return sum;
 		 }
 	 }
 	 public static void moveValue(int[] arr, int val)
